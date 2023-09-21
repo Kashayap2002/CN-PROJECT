@@ -10,16 +10,41 @@
             font-family: Arial, sans-serif;
         }
 
+        .meal-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px; /* Add margin around the entire meal section */
+        }
+
         .meal {
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px;
-            display: inline-block;
+            width: 30%; /* Adjust the width as needed */
+            max-width: 300px; /* Set a maximum width for the containers */
         }
 
         .meal img {
             max-width: 100%;
-            height: auto;
+            height: 200px; /* Set a fixed height for all images */
+            width: 100%; /* Make images fill the entire width of their containers */
+        }
+
+        /* CSS animation for scrolling text */
+        .scrolling-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scrolling 10s linear infinite;
+        }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -29,32 +54,34 @@
         <p>Find delicious meals at lower prices from local restaurants.</p>
     </header>
 
-    <section>
-        <h2>Available Meals</h2>
-        <div class="meal">
-            <img src="faaruzi.jpg" alt="Meal 1">
-            <h3>FAARUZI</h3>
-            <p>Multi-cuisine Restaurant</p>
-            <p>Price: Rs 100/- per plate</p>
-            <button ><a href="checkout.html" class="btn">Add to cart</a></button>
-        </div>
+    <section class="available-meals">
+        <h2 class="scrolling-text">Available Meals: FAARUZI, 99 North, 7 Life</h2>
 
-        <div class="meal">
-            <img src="meal2.jpg" alt="Meal 2">
-            <h3>Meal 2</h3>
-            <p>Description of Meal 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Price: $9.99</p>
-            <button ><a href="checkout.html" class="btn">Add to cart</a></button>
-        </div>
+        <div class="meal-container">
+            <div class="meal">
+                <img src="faaruzi.jpg" alt="Meal 1">
+                <h3>FAARUZI</h3>
+                <p>Multi-cuisine Restaurant</p>
+                <p>Price: Rs 50/- per plate</p>
+                <button><a href="checkout.html" class="btn">Add to cart</a></button>
+            </div>
 
-        <div class="meal">
-            <img src="meal3.jpg" alt="Meal 3">
-            <h3>Meal 3</h3>
-            <p>Description of Meal 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Price: $8.49</p>
-            <button ><a href="checkout.html" class="btn">Add to cart</a></button>
-        </div>
+            <div class="meal">
+                <img src="99north.jpeg" alt="Meal 2">
+                <h3>99 North</h3>
+                <p>Indian | Chinese | Tandoor</p>
+                <p>Price: Rs 100/- per plate</p>
+                <button><a href="checkout.html" class="btn">Add to cart</a></button>
+            </div>
 
+            <div class="meal">
+                <img src="7life.jpg" alt="Meal 3">
+                <h3>7 Life</h3>
+                <p>South Indian, Chinese, Seafood, North Indian, Mughlai, Biryani, Desserts, Beverages</p>
+                <p>Price: Rs 80/- per plate</p>
+                <button><a href="checkout.html" class="btn">Add to cart</a></button>
+            </div>
+        </div>
     </section>
 
     <footer>
